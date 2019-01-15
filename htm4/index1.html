@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+<meta charset="utf-8"/>
+<title>JAKOŚĆ POWIETRZA KRYRY</title>
+
+<script src="jquery-3.3.1.min.js"></script>
+
+<script>
+
+function odswierzanieCzasu()
+{
+var dzisiaj = new Date();
+var dzien = dzisiaj.getDate();
+if(dzien<10) dzien = "0"+dzien;
+var miesiac = dzisiaj.getMonth()+1;
+if(miesiac<10) miesiac = "0"+miesiac;
+var rok = dzisiaj.getFullYear();
+
+var godzina = dzisiaj.getHours();
+if(godzina<10) godzina = "0"+godzina;
+var minuta = dzisiaj.getMinutes();
+if(minuta<10) minuta = "0"+minuta;
+var sekunda = dzisiaj.getSeconds();
+if(sekunda<10) sekunda = "0"+sekunda;
+
+document.getElementById("data").innerHTML = dzien+"-"+miesiac+"-"+rok;
+document.getElementById("zegar").innerHTML = godzina+":"+minuta+":"+sekunda;
+
+setTimeout("odswierzanieCzasu()",1000);
+}
+</script>
+
+<meta name="description" content="Oto parametry jakości powietrza w miejscowości Kryry"/>
+<meta name="keywords" content="kryry, pogoda, smog, jakosc powietrza, temperatura, cisnienie, wilgotnosc, pm1, pm2.5, pm10"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+</head>
+
+<body onload="odswierzanieCzasu();">
+
+<div id="zegar"></div>
+<div id="tytul">Jakość powietrza w Kryrach</div>
+<div id="data"></div>
+<div style="clear:both;"></div>
+
+
+<div id="glowny1">
+  <div class="czujnik" id="temp">Temperatura powietrza</div>
+    
+  <div class="czujnik" id="wilg">Wilgotność powietrza</div> 
+   
+  <div class="czujnik" id="cis">Ciśnienie</div>  
+   
+  <div class="czujnik" id="pm1">PM 1</div>
+      
+  <div class="czujnik" id="pm2">PM 2,5</div>
+    
+  <div class="czujnik" id="pm10">PM 10</div>
+      
+</div>
+
+<div id="glowny2">
+    <div id="odczytCzujnik"></div>
+	<script>$('#odczytCzujnik').hide();</script>
+	<div id="wyniki"></div>
+	<script>$('#wyniki').hide();</script>
+  
+	 
+  <div id="odczytGlowny">Witaj :-) <br/> <br/> Kliknij na wybrany parametr powietrza po lewej stronie, aby zobaczyć aktualny wynik odczytu...</div>
+  </div>
+<div id="stopka">2019 Copyright by Soyer. All rights reserved. :-) </div>
+
+ <script>
+   document.getElementById("temp").addEventListener("click", function(){
+   $("#odczytGlowny").remove();});
+   document.getElementById("temp").addEventListener("click", function(){
+   $('#odczytCzujnik').show()});
+   document.getElementById("temp").addEventListener("click", function(){
+   $('#wyniki').show()});
+   document.getElementById("wilg").addEventListener("click", function(){
+   $("#odczytGlowny").remove();});
+   document.getElementById("wilg").addEventListener("click", function(){
+   $('#odczytCzujnik').show()});
+   document.getElementById("wilg").addEventListener("click", function(){
+   $('#wyniki').show()});
+   document.getElementById("cis").addEventListener("click", function(){
+   $("#odczytGlowny").remove();});
+   document.getElementById("cis").addEventListener("click", function(){
+   $('#odczytCzujnik').show()});
+   document.getElementById("cis").addEventListener("click", function(){
+   $('#wyniki').show()});
+   document.getElementById("pm1").addEventListener("click", function(){
+   $("#odczytGlowny").remove();});
+   document.getElementById("pm1").addEventListener("click", function(){
+   $('#odczytCzujnik').show()});
+   document.getElementById("pm1").addEventListener("click", function(){
+   $('#wyniki').show()});
+   document.getElementById("pm2").addEventListener("click", function(){
+   $("#odczytGlowny").remove();});
+   document.getElementById("pm2").addEventListener("click", function(){
+   $('#odczytCzujnik').show()});
+   document.getElementById("pm2").addEventListener("click", function(){
+   $('#wyniki').show()});
+   document.getElementById("pm10").addEventListener("click", function(){
+   $("#odczytGlowny").remove();});
+   document.getElementById("pm10").addEventListener("click", function(){
+   $('#odczytCzujnik').show()});
+   document.getElementById("pm10").addEventListener("click", function(){
+   $('#wyniki').show()});
+   
+   document.getElementById("temp").addEventListener("click", function(){
+   document.getElementById("odczytCzujnik").innerHTML = "Aktualna temperatura wynosi : ";});
+   document.getElementById("temp").addEventListener("click", function(){
+   document.getElementById("wyniki").innerHTML = "21 *C ";});
+   
+   document.getElementById("wilg").addEventListener("click", function(){
+   document.getElementById("odczytCzujnik").innerHTML = "Aktualna wilgotność wynosi : ";});
+   document.getElementById("wilg").addEventListener("click", function(){
+   document.getElementById("wyniki").innerHTML = "75 %RH ";});
+   
+   document.getElementById("cis").addEventListener("click", function(){
+   document.getElementById("odczytCzujnik").innerHTML = "Aktualne ciśnienie wynosi : ";});
+   document.getElementById("cis").addEventListener("click", function(){
+   document.getElementById("wyniki").innerHTML = "995 hPa";});
+   
+   document.getElementById("pm1").addEventListener("click", function(){
+   document.getElementById("odczytCzujnik").innerHTML = "Aktualne stężenie PM 1 wynosi : ";});
+   document.getElementById("pm1").addEventListener("click", function(){
+   document.getElementById("wyniki").innerHTML = "12 ug/m3";});
+   
+   document.getElementById("pm2").addEventListener("click", function(){
+   document.getElementById("odczytCzujnik").innerHTML = "Aktualne stężenie PM 2,5 wynosi : ";});
+   document.getElementById("pm2").addEventListener("click", function(){
+   document.getElementById("wyniki").innerHTML = "22 ug/m3";});
+   
+   document.getElementById("pm10").addEventListener("click", function(){
+   document.getElementById("odczytCzujnik").innerHTML = "Aktualne stężenie PM 10 wynosi : ";});
+   document.getElementById("pm10").addEventListener("click", function(){
+   document.getElementById("wyniki").innerHTML = "32 ug/m3";});
+ </script>
+ 
+</body>
+
+</html>
